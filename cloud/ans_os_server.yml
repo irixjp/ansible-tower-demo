@@ -2,20 +2,8 @@
   gather_facts: no
   connection: local
   max_fail_percentage: 0
-  vars:
-    config_file: "{{ lookup('env', 'OS_CLIENT_CONFIG_FILE') }}"
 
   tasks:
-    - debug: msg="{{ config_file }}"
-
-    - stat: path="{{ config_file }}"
-      register: st
-
-    - include_vars: "{{ config_file }}"
-      when: st.stat.exists and st.stat.isreg
-
-    - name: "Print out clouds variable"
-      debug: msg="{{ clouds|default('No clouds found') }}"
 
     - name: Create a new instance and attaches to a network and passes metadata to the instance
       os_server:
