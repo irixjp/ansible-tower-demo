@@ -8,13 +8,19 @@
     - name: Create a new instance and attaches to a network and passes metadata to the instance
       os_server:
         state: present
-        name: vm1-from-tower
-        image: 9ee1adce-9c17-41d3-8dad-d2222a282dc3
+        name: "{{ item }}"
+        image: CentOS-7-x86_64-GenericCloud-1708
         key_name: ansible-tower-key
-        timeout: 200
+        wait: yes
+        timeout: 180
         flavor: 100
         nics:
           - net-name: shared-net
+        auto_ip: no
+        security_groups: open-all
         meta:
-          hostname: test1
+          hostname: "{{ item }}"
           group: test_group1
+      with_items:
+        - vm1-from-tower
+        - vm2-from-tower
