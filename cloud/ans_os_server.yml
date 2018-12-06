@@ -13,7 +13,7 @@
         key_name: ansible-tower-key
         wait: yes
         timeout: 180
-        flavor: 100
+        flavor: m1.small
         nics:
           - net-name: shared-net
         auto_ip: no
