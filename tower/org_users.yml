@@ -1,0 +1,21 @@
+- name: Initial setup for Ansible Tower
+  hosts: all
+  gather_facts: no
+  connection: local
+  max_fail_percentage: 0
+
+  tasks:
+
+    - name: Create tower organization
+      tower_organization:
+        name: cloud-org
+        description: cloud management group
+        state: present
+
+    - name: Add tower user
+      tower_user:
+        username: cloud-admin
+        password: redhat
+        email: tower@example.com
+        superuser: no
+        state: present
