@@ -14,8 +14,21 @@
 
     - name: Add tower user
       tower_user:
-        username: cloud-admin
+        username: "{{ item }}"
         password: redhat
         email: tower@example.com
         superuser: no
         state: present
+      loop:
+        - cloud-admin
+        - cloud-user
+
+    - name: Add jdoe to the member role of My Team
+      tower_role:
+        target_team: "{{ item[0] }}"
+        user: "{{ item[1] }}"
+        role: "{{ item[2] }}"
+        state: present
+      loop:
+        - ["cloud-org", "cloud-admin", "admin"]
+        - ["cloud-org", "cloud-user",  "member"]
