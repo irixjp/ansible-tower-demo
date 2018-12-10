@@ -30,5 +30,5 @@
         role: "{{ item[2] }}"
         state: present
       loop:
-        - ["cloud-org", "cloud-admin", "admin"]
-        - ["cloud-org", "cloud-user",  "member"]
+        - [cloud-org, cloud-admin, admin]
+        - [cloud-org, cloud-user,  member]
