@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - shell: hostname
+      register: ret
+
+    - debug: var=ret
