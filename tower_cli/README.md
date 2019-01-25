@@ -144,3 +144,27 @@ tower-cli job launch -J tower-demo-job2 --monitor -e @survey_answer.txt
 ```
 
 
+## Workflow
+
+```
+tower-cli job_template create \
+        -n job-true \
+        --job-type run \
+        -i tower-demo-inv-openstack \
+        --project tower-demo-pj \
+        --playbook utils/true.yml \
+        --credential tower-demo-cred-ssh \
+        --become-enabled true
+
+tower-cli job_template create \
+        -n job-false \
+        --job-type run \
+        -i tower-demo-inv-openstack \
+        --project tower-demo-pj \
+        --playbook utils/false.yml \
+        --credential tower-demo-cred-ssh \
+        --become-enabled true
+
+tower-cli job launch -J job-true --monitor
+tower-cli job launch -J job-false --monitor
+```
