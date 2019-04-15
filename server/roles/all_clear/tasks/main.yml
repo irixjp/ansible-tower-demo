@@ -1,0 +1,18 @@
+---
+- file:
+    path: /etc/httpd/conf/httpd.conf
+    state: absent
+
+- file:
+    path: /var/www/html/index.html
+    state: absent
+
+- systemd:
+    name: httpd
+    state: stopped
+    enabled: no
+
+- yum:
+    name: httpd
+    state: absent
+
