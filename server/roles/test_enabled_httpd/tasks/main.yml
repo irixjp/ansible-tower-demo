@@ -1,0 +1,20 @@
+---
+- name: TEST wait for HTTP port up
+  local_action:
+    module: wait_for
+    host: "{{ (ansible_ssh_host | default(ansible_host)) | default(inventory_hostname) }}"
+    port: 80
+    state: started
+    delay: 3
+    timeout: 10
+
+- name: TEST access to http from tower server
+  local_action:
+    module: uri
+    url: http://{{ (ansible_ssh_host | default(ansible_host)) | default(inventory_hostname) }}/
+    validate_certs: no
+    timeout: 5
+    return_content: yes
+  register: webpages
+
+- debug: var=webpages

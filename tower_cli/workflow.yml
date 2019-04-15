@@ -1,0 +1,10 @@
+- job_template: job-true
+  success:
+    - job_template: job-true
+      success:
+        - job_template: job-true
+  failure:
+    - job_template: job-true
+      success:
+        - job_template: job-true
+

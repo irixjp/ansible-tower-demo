@@ -1,0 +1,11 @@
+---
+- name: HTTPDのインストール
+  yum:
+    name: httpd
+    state: present
+
+- name: HTTPDの有効化
+  systemd:
+    name: httpd
+    state: started
+    enabled: yes

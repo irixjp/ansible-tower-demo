@@ -1,0 +1,4 @@
+- name: index.html の配布
+  template:
+    src: templates/index.html.j2
+    dest: /var/www/html/index.html

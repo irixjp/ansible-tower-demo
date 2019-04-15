@@ -168,3 +168,12 @@ tower-cli job_template create \
 tower-cli job launch -J job-true --monitor
 tower-cli job launch -J job-false --monitor
 ```
+
+```
+tower-cli workflow create \«
+        -n workflow1 \
+        --organization Default \
+        --description "example description"
+
+tower-cli workflow schema workflow1 @workflow.yml
+```
