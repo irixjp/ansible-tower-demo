@@ -1,7 +1,6 @@
 ---
 - name: TEST wait for HTTP port up
-  local_action:
-    module: wait_for
+  wait_for:
     host: "{{ (ansible_ssh_host | default(ansible_host)) | default(inventory_hostname) }}"
     port: 80
     state: started

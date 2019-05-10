@@ -1,3 +1,19 @@
+## Config
+
+Confirmation
+```
+tower-cli config --scope local
+```
+
+Configuration
+```
+tower-cli config --scope local username admin
+tower-cli config --scope local password ansibleWS
+tower-cli config --scope local host xx.yy.zz.aa
+tower-cli config --scope local verify_ssl false
+```
+
+
 ## Projects
 
 GitHub
