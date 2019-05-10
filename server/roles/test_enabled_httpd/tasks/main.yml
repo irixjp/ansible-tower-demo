@@ -10,7 +10,7 @@
 - name: TEST access to http from tower server
   local_action:
     module: uri
-    url: http://{{ (ansible_ssh_host | default(ansible_host)) | default(inventory_hostname) }}/
+    url: http://{{ ( ansible_host | default(ansible_ssh_host)) | default(inventory_hostname ) }}/
     validate_certs: no
     timeout: 5
     return_content: yes
