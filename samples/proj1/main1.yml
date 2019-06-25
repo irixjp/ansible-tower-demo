@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+    - hello_common
+    - hello_proj1
+
