@@ -1,8 +1,0 @@
----
-- hosts: all
-  tasks:
-    - import_role:
-        name: httpd_install_and_enabled
-
-    - import_role:
-        name: httpd_configure_and_restart

@@ -1,2 +1,0 @@
-survey_text: test text
-survey_single_answer: selection 1

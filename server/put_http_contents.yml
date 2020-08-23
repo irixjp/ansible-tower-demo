@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-    - import_role:
-        name: put_http_contents
