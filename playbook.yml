@@ -8,4 +8,4 @@
     - ec2_vpc_net_info:
       register: ret
 
-    - debug: ret
+    - debug: var=ret
