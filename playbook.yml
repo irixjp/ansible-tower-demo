@@ -6,6 +6,7 @@
     - amazon.aws
   tasks:
     - ec2_vpc_net_info:
+        region: ap-northeast-1
       register: ret
 
     - debug: var=ret
