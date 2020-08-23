@@ -1,3 +1,4 @@
 ---
 collections:
-- irixjp.sample_collection_hello
+- f5networks.f5_modules
+- amazon.aws
