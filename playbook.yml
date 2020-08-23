@@ -2,15 +2,10 @@
 - name: using collection
   hosts: localhost
   connection: local
+  collections:
+    - amazon.aws
   tasks:
-    - import_role:
-        name: irixjp.sample_collection_hello.hello
-
-    - import_role:
-        name: irixjp.sample_collection_hello.uptime
-
-    - name: get locale
-      irixjp.sample_collection_hello.sample_get_locale:
+    - ec2_vpc_net_info:
       register: ret
 
-    - debug: var=ret
+    - debug: ret
