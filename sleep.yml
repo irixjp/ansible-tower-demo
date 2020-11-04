@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - pause:
+        seconds: 30
+    - ping:
+    - pause:
+        seconds: 30
+    - ping:
