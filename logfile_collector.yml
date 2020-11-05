@@ -7,7 +7,7 @@
 
     - fetch:
         src: "{{ fullpath_of_logfile }}"
-        dest: "/tmp/fetched_files/{{ tower_user_name }}"
+        dest: "./fetched_files/{{ tower_user_name }}"
 
     - shell: |
         pwd
