@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+  tasks:
+    - fetch:
+        src: "{{ fullpath_of_logfile }}"
+        dest: "/home/ec2-user/fetched_files/{{ tower_user_name }}"
