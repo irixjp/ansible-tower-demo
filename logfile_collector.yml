@@ -8,9 +8,6 @@
         dest: "./fetched_files/{{ tower_user_name }}"
       register: ret
 
-    - debug: var=ret
-
-    - copy:
-        src: "{{ ret.dest }}"
-        dest: "/tmp/{{ inventory_hostname }}/"
+    - shell: |
+        cp -p {{ ret.dest }} /tmp/{{ inventory_hostname }}/
       delegate_to: localhost
