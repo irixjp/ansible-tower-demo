@@ -1,6 +1,14 @@
 - hosts: all
   become: yes
   tasks:
+    - shell: |
+        pwd
+        ls -alF
+
     - fetch:
         src: "{{ fullpath_of_logfile }}"
         dest: "/tmp/fetched_files/{{ tower_user_name }}"
+
+    - shell: |
+        pwd
+        ls -alF
