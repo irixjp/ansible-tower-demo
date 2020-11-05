@@ -1,14 +1,11 @@
 - hosts: all
   become: yes
+  gather_facts: no
   tasks:
-    - shell: |
-        pwd
-        ls -alF
 
     - fetch:
         src: "{{ fullpath_of_logfile }}"
         dest: "./fetched_files/{{ tower_user_name }}"
+      register: ret
 
-    - shell: |
-        pwd
-        ls -alF
+    - debug: var=ret
