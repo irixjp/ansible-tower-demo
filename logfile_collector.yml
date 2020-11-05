@@ -1,9 +1,10 @@
 - hosts: all
   become: yes
   gather_facts: no
+  vars:
+    now_date: "{{ lookup('pipe','date +%Y%m%d%H%M') }}"
   tasks:
 
     - fetch:
         src: "{{ fullpath_of_logfile }}"
-        dest: "/tmp/fetched_files/{{ tower_user_name }}"
-      register: ret
+        dest: "/tmp/fetched_files/{{ tower_user_name }}/{{ now_date }}"
