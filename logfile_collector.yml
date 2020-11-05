@@ -11,3 +11,4 @@
     - shell: |
         cp -p {{ ret.dest }} /tmp/{{ inventory_hostname }}/
       delegate_to: localhost
+      connection: local
