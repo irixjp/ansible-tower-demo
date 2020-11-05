@@ -5,10 +5,5 @@
 
     - fetch:
         src: "{{ fullpath_of_logfile }}"
-        dest: "./fetched_files/{{ tower_user_name }}"
+        dest: "/tmp/fetched_files/{{ tower_user_name }}"
       register: ret
-
-    - shell: |
-        cp -p {{ ret.dest }} /tmp/{{ inventory_hostname }}/
-      delegate_to: localhost
-      connection: local
