@@ -12,6 +12,7 @@
 
     - set_stats:
         data:
-          atached_file_path: "{{ ret.dest | list }}"
+          atached_file_path:
+            - "{{ ret.dest }}"
 
     - debug: var=atached_file_path
