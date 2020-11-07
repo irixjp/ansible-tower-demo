@@ -12,7 +12,6 @@
 
     - set_stats:
         data:
-          atached_file_path: "{{ ret.dest }}"
-        per_host: yes
+          atached_file_path: "{{ ret.dest | list }}"
 
     - debug: var=atached_file_path
