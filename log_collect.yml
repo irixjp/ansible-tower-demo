@@ -10,7 +10,7 @@
         dest: "/tmp/fetched_files/{{ tower_user_name }}/{{ now_date }}"
       register: ret
 
-    - set_stat:
+    - set_stats:
         data:
           atached_file_path: "{{ ret.dest }}"
 
