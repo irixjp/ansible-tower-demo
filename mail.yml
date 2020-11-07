@@ -4,11 +4,11 @@
     - mail:
         host: localhost
         to: root
-        subject: "{{ mail_subject | default('テストメール')}}"
+        subject: Ansible Mail {{ mail_subject | default('テストメール') }}
         body: |
           これはテストメールです。
           Ansibleから送信されました。
-          ansible version {{ ansile_version }}
+          ansible version {{ ansible_version }}
         attach: "{{ atached_file_path | default('/dummy') }}"
         charset: utf-8
       delegate_to: localhost
