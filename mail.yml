@@ -1,0 +1,16 @@
+- hosts: all
+  gather_facts: no
+  tasks:
+    - mail:
+        host: localhost
+        to: root
+        subject: "{{ mail_subject | default('テストメール')}}"
+        body: |
+          これはテストメールです。
+          Ansibleから送信されました。
+          ansible version {{ ansile_version }}
+        attach:
+          - "{{ atached_file_path | default('/tmp/fetched_files/admin/node2/var/log/messages') }}"
+        charset: utf-8
+      delegate_to: localhost
+      run_once: true

@@ -8,3 +8,10 @@
     - fetch:
         src: "{{ fullpath_of_logfile }}"
         dest: "/tmp/fetched_files/{{ tower_user_name }}/{{ now_date }}"
+      register: ret
+
+    - set_stat:
+        data:
+          atached_file_path: "{{ ret.dest }}"
+
+    - debug: var=atached_file_path
