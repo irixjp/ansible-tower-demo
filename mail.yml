@@ -11,5 +11,3 @@
           ansible version {{ ansible_version }}
         attach: "{{ atached_file_path | default('/dummy') }}"
         charset: utf-8
-      delegate_to: localhost
-      run_once: true
