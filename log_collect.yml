@@ -6,7 +6,7 @@
   tasks:
 
     - fetch:
-        src: "{{ fullpath_of_logfile }}"
+        src: "{{ fullpath_of_logfile | default('/var/log/messages' )}}"
         dest: "/tmp/fetched_files/{{ tower_user_name }}/{{ now_date }}"
       register: ret
 
