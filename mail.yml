@@ -9,8 +9,7 @@
           これはテストメールです。
           Ansibleから送信されました。
           ansible version {{ ansile_version }}
-        attach:
-          - "{{ atached_file_path | default('/tmp/fetched_files/admin/node2/var/log/messages') }}"
+        attach: "{{ atached_file_path | default('/dummy') }}"
         charset: utf-8
       delegate_to: localhost
       run_once: true
