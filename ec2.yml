@@ -9,11 +9,11 @@
         var: ret
 
     - ec2:
-        key_name: mykey
+        key_name: aitac-automation-key
         instance_type: t2.micro
         image: aw0evgkw8e5c1q413zgy5pjce
         wait: yes
-        group: aitac-automation-key
+        group: aitac-automation-jupyter
         count: 1
         vpc_subnet_id: subnet-41ab9008
         assign_public_ip: yes
