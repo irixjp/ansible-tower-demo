@@ -11,7 +11,7 @@
     - ec2:
         key_name: aitac-automation-key
         instance_type: t2.micro
-        image: aw0evgkw8e5c1q413zgy5pjce
+        image: ami-06a46da680048c8ae
         wait: yes
         group: aitac-automation-jupyter
         count: 1
