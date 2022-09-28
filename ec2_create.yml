@@ -13,7 +13,7 @@
         instance_type: "{{ AWS_INSTANCE_TYPE | default('t2.micro')}}"
         image: ami-06a46da680048c8ae
         wait: yes
-        group: aitac-automation-master-sg
+        group: aitac-automation-sg
         count: "{{ AWS_INSTANCE_NUM | default(0) }}"
         vpc_subnet_id: subnet-41ab9008
         assign_public_ip: yes
