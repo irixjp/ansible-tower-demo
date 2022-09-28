@@ -1,19 +1,15 @@
 - hosts: all
   connection: local
   tasks:
-    - ec2_instance_info:
-        region: ap-northeast-1
-      register: ret
-
-    - debug:
-        var: ret
-
     - name: Collect instance info
-      amazon.aws.ec2_instance_info:
+      ec2_instance_info:
         region: ap-northeast-1
         filters:
           "tag:role": ansible-demo-tag-role
       register: ec2
+
+    - debug:
+        var: ec2
 
     - name: Retrive instance ids
       set_fact:
@@ -24,7 +20,7 @@
     - debug: var=delete_ids
 
 #    - name: Delete instances
-#      amazon.aws.ec2:
+#      ec2:
 #        state: absent
 #        instance_ids: "{{ delete_ids }}"
 #        region: 
