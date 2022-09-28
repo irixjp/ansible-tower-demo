@@ -13,7 +13,7 @@
 
     - name: Retrive instance ids
       set_fact:
-        delete_ids: "{{ ec2.instances | community.general.json_query(query) }}"
+        delete_ids: "{{ ec2.instances | json_query(query) }}"
       vars:
         query: "[*].instance_id"
 
