@@ -23,6 +23,6 @@
       ec2:
         state: absent
         instance_ids: "{{ delete_ids }}"
-        region: 
+        region: ap-northeast-1
       when: delete_ids | length > 0
 
