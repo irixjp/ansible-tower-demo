@@ -14,7 +14,10 @@
         image: ami-06a46da680048c8ae
         wait: yes
         group: aitac-automation-jupyter
-        count: 1
+        count: "{{ AWS_INSTANCE_NUM | default(0) }}"
         vpc_subnet_id: subnet-41ab9008
         assign_public_ip: yes
         region: ap-northeast-1
+        instance_tags:
+          Name: ansible-demo-tag-name
+          role: ansible-demo-tag-role
