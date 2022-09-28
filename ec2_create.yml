@@ -19,5 +19,5 @@
         assign_public_ip: yes
         region: ap-northeast-1
         instance_tags:
-          Name: demo-ansivle-tag-name
-          role: demo-ansivle-tag-role
+          Name: demo-ansible-tag-name
+          role: demo-ansible-tag-role
