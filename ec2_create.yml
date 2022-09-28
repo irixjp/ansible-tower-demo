@@ -9,11 +9,11 @@
         var: ret
 
     - ec2:
-        key_name: aitac-automation-key
-        instance_type: t2.micro
+        key_name: aitac-keypair-master
+        instance_type: "{{ AWS_INSTANCE_TYPE | default('t2.micro')}}"
         image: ami-06a46da680048c8ae
         wait: yes
-        group: aitac-automation-jupyter
+        group: aitac-automation-master-sg
         count: "{{ AWS_INSTANCE_NUM | default(0) }}"
         vpc_subnet_id: subnet-41ab9008
         assign_public_ip: yes
